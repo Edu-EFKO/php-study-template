@@ -6,18 +6,18 @@ install:
 	@$(MAKE) -s up
 
 up:
-	@docker compose -p calculator-form up -d
+	@docker compose -p clean-php up -d
 
 down:
-	@docker compose -p calculator-form down --remove-orphans
+	@docker compose -p clean-php down --remove-orphans
 
 ps:
-	@docker compose -p calculator-form ps
+	@docker compose -p clean-php ps
 
 restart: down up
 
 logs:
-	@docker compose -p calculator-form logs -f
+	@docker compose -p clean-php logs -f
 
 docker-build: \
 	docker-build-php-fpm \
@@ -27,8 +27,8 @@ docker-build-php-fpm:
 	@docker build --target=fpm \
 	--build-arg USER=1000 \
 	--build-arg GROUP=1000 \
-	-t localhost/calculator-form-php-fpm:latest -f ./docker/Dockerfile .
+	-t localhost/clean-php-php-fpm:latest -f ./docker/Dockerfile .
 
 docker-build-nginx:
 	@docker build --target=nginx \
-	-t localhost/calculator-form-nginx:latest -f ./docker/Dockerfile .
+	-t localhost/clean-php-nginx:latest -f ./docker/Dockerfile .

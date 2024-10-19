@@ -1,16 +1,15 @@
 services:
-
   php-fpm:
-    image: localhost/calculator-form-php-fpm:latest
+    image: localhost/clean-php-php-fpm:latest
     restart: always
-    container_name: calculator-form-php-fpm
+    container_name: clean-php-php-fpm
     volumes:
       - ./:/var/www/html
 
   nginx:
-    image: localhost/calculator-form-nginx:latest
+    image: localhost/clean-php-nginx:latest
     restart: always
-    container_name: calculator-form-nginx
+    container_name: clean-php-nginx
     ports:
       - ${APP_WEB_PORT}:80
     environment:
