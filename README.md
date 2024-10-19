@@ -22,37 +22,37 @@ APP_WEB_PORT=8077
 1. Выполнить скрипт установки проекта
 > В среде Windows скрипт запускать при помощи Git bash
 ```sh
-docker compose -p calculator-form down --remove-orphans && \
+docker compose -p clean-php down --remove-orphans && \
 docker build --target=fpm \
 	--build-arg USER=1000 \
 	--build-arg GROUP=1000 \
-	-t localhost/calculator-form-php-fpm:latest -f ./docker/Dockerfile . && \
+	-t localhost/clean-php-php-fpm:latest -f ./docker/Dockerfile . && \
 docker build --target=nginx \
-	-t localhost/calculator-form-nginx:latest -f ./docker/Dockerfile . && \
-docker compose -p calculator-form up -d
+	-t localhost/clean-php-nginx:latest -f ./docker/Dockerfile . && \
+docker compose -p clean-php up -d
 ```
 
 ### Служебное
 
 - запуск контейнеров
     ```sh
-    docker compose -p calculator-form up -d
+    docker compose -p clean-php up -d
     ```
 - остановка контейнеров
     ```sh
-    docker compose -p calculator-form down --remove-orphans
+    docker compose -p clean-php down --remove-orphans
     ```
 - перезапустить контейнеры
     ```sh
-    docker compose -p calculator-form down --remove-orphans && docker compose -p calculator-form up -d
+    docker compose -p clean-php down --remove-orphans && docker compose -p clean-php up -d
     ```
 - логи контейнеров
     ```sh
-    docker compose -p calculator-form logs -f
+    docker compose -p clean-php logs -f
     ```
 - статус контейнеров
     ```sh
-    docker compose -p calculator-form ps
+    docker compose -p clean-php ps
     ```
 
 ## Установка с использованием утилиты Make
