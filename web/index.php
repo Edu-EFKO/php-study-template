@@ -25,11 +25,9 @@
     <div class='card p-3 shadow'>
         <h5 class='card-title'>Информация о грузе</h5>
         <div class='card-body'>
-            <p class='mb-2'><strong>Наименование:</strong> <?= $name ?></p>
-            <p class="mb-2"><strong>Тоннаж:</strong> <?= $tonnage ?> тонн</p>
-            <p class="mb-2"><strong>Статус доставки:</strong> <?= $isDelivered ? 'Доставлен' : 'Не доставлен' ?></p>
-            <p class="mb-2"><strong>Дальность доставки:</strong> <?= $distance ?> км</p>
-            <p class="mb-2"><strong>Стоимость доставки:</strong> <?= $deliveryCost ?> руб.</p>
+            <p class='mb-2'><strong>Наименование:</strong></p>
+            <p class="mb-2"><strong>Тоннаж:</strong></p>
+            <p class="mb-2"><strong>Статус доставки:</strong></p>
         </div>
     </div>
 </main>
@@ -38,7 +36,7 @@
     <div class="container">
         <div class="row text-muted">
             <div class="col-md-6 text-center text-md-start">
-                &copy; ЭФКО <?= date('Y') ?>
+                &copy; ЭФКО 2024
             </div>
         </div>
     </div>
