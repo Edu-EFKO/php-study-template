@@ -32,3 +32,9 @@ docker-build-php-fpm:
 docker-build-nginx:
 	@docker build --target=nginx \
 	-t localhost/clean-php-nginx:latest -f ./docker/Dockerfile .
+
+composer-install:
+	@docker compose -p clean-php exec php-fpm composer install
+
+composer-require:
+	@docker compose -p clean-php exec php-fpm composer require $(package)

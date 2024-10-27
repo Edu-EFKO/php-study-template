@@ -9,6 +9,22 @@
     <link type="image/x-icon" href="favicon.ico" rel="icon">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/site.css">
+    <style>
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .card {
+            flex: 1 1 calc(33.333% - 10px);
+            min-width: 250px;
+        }
+
+        .card-body p {
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body class="d-flex flex-column h-100">
 <header id="header">
@@ -22,12 +38,16 @@
 </header>
 
 <main class='container mt-5'>
-    <div class='card p-3 shadow'>
-        <h5 class='card-title'>Информация о грузе</h5>
-        <div class='card-body'>
-            <p class='mb-2'><strong>Наименование:</strong></p>
-            <p class="mb-2"><strong>Тоннаж:</strong></p>
-            <p class="mb-2"><strong>Статус доставки:</strong></p>
+    <div class='card p-3 shadow mb-4'>
+        <h5 class='card-title'>Список грузов</h5>
+        <div class='card-body card-container'>
+            <div class='card p-2'>
+                <div class='card-body'>
+                    <p><strong>Наименование:</strong> ...</p>
+                    <p><strong>Тоннаж:</strong> ... тонн</p>
+                    <p><strong>Статус:</strong> ...</p>
+                </div>
+            </div>
         </div>
     </div>
 </main>
